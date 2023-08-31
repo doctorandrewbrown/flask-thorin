@@ -7,7 +7,7 @@ app = Flask(__name__)
 # define "views" ie functions to run when triggered by given route
 @app.route("/")
 def index():
-    return render_template("index.html", title = "Home")
+    return render_template("index.html", title = "Home", list=["andy", "david", "brown"])
 
 
 @app.route("/about")
@@ -22,8 +22,6 @@ def contact():
 @app.route("/post")
 def post():
     return render_template("post.html", title = "Test Post")
-
-
 
 
 if __name__ == "__main__":
