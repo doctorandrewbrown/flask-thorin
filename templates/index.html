@@ -16,6 +16,14 @@
         {% endblock %}
         <!-- Main Content-->
         {% block content %}
+
+        {# test loop #}
+        <p>{{ list }}</p>
+        {% for item in list %}
+        <p>{{ item }}</p>
+        <p>{{ loop.index }}</p>
+        {% endfor %}
+
         <main class="mb-4">
             <div class="container px-4 px-lg-5">
                 <div class="row gx-4 gx-lg-5 justify-content-center">
