@@ -17,7 +17,7 @@ def about():
 
 @app.route("/contact")
 def contact():
-    return render_template("contact.html", title = "Call me!")
+    return render_template("contact.html", title = "Call me")
 
 @app.route("/post")
 def post():
