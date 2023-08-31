@@ -3,7 +3,7 @@ from flask import Flask, render_template
 
 app = Flask(__name__)
 
-
+# define "views" ie functions to run when triggered by given route
 @app.route("/")
 def index():
     return render_template("index.html")
@@ -17,6 +17,11 @@ def about():
 @app.route("/contact")
 def contact():
     return render_template("contact.html")
+
+@app.route("/post")
+def post():
+    return render_template("post.html")
+
 
 
 
