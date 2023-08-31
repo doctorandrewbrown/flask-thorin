@@ -12,7 +12,7 @@ def index():
 
 @app.route("/about")
 def about():
-    return render_template("about.html")
+    return render_template("about.html", title = "Test")
 
 
 @app.route("/contact")
@@ -27,7 +27,8 @@ def post():
 
 
 if __name__ == "__main__":
+    # PORT is needed for heroku deploy
     app.run(
         host=os.environ.get("IP", "0.0.0.0"),
         port=int(os.environ.get("PORT", "5000")),
-        debug=True)
+        debug=False)
