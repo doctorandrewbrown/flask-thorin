@@ -23,6 +23,11 @@ def contact():
 def post():
     return render_template("post.html", title = "Test Post")
 
+# test route for dynamic url
+@app.route("/about/<name>")
+def say_hello(name):
+    return render_template("say_hello.html", title = f"Hello {name}")
+
 
 if __name__ == "__main__":
     # PORT is needed for heroku deploy
