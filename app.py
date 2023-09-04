@@ -1,5 +1,5 @@
 import os
-from flask import Flask, render_template
+from flask import Flask, render_template, request
 
 
 app = Flask(__name__)
@@ -12,16 +12,23 @@ def index():
 
 @app.route("/about")
 def about():
+    name = request.args.get("test")
+    print(name)
     return render_template("about.html", title = "Test")
 
 
-@app.route("/contact")
+@app.route("/contact", methods = ["POST", "GET"])
 def contact():
-    return render_template("contact.html", title = "Call me")
+    #print(request.form.get("id"))
+    name = request.form["name"]
+    print(name)
+    return render_template("contact.html", title = "Contact us")
+
 
 @app.route("/post")
 def post():
     return render_template("post.html", title = "Test Post")
+
 
 # test route for dynamic url
 @app.route("/about/<name>")
